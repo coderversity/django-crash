@@ -1,0 +1,104 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+h1 {
+    color: #333;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+button,
+a.btn-link {
+    background-color: #1f618d;
+    padding: 0.7rem 1.3rem;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+a.btn-link {
+    display: block;
+    margin: 0 auto;
+}
+
+button {
+    width: 100%;
+}
+
+button:hover {
+    background-color: #154360;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 75vw;
+    margin: 0 auto;
+}
+
+label {
+    font-weight: bold;
+}
+
+.form-control {
+    margin: 1.3rem 0;
+}
+
+input[type="text"],
+textarea {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 1rem 0.5rem;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="checkbox"],
+textarea {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #333;
+    border-radius: 3px;
+}
+
+form + a {
+    margin-top: 1rem;
+}
+
+ul {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.2rem 0;
+    font-size: 1.1rem;
+}
+
+li a:hover {
+    color: blue;
+}
+
+.badge {
+    background-color: green;
+    color: white;
+    padding: 0.2rem 1rem;
+    border-radius: 5px;
+}
+
+.badge * {
+    padding: 0 0.2rem;
+}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ task.title }}{% endblock %}
+
+{% block content%}
+    <h1>{{ task.title }}</h1>
+    {% if task.completed %}
+        <span class="badge">
+            <i class="fas fa-check"></i>
+            Task complete
+        </span>
+    {% endif %}
+    <p>{{ task.description }}</p>
+    <a href="{% url "todo_list" %}" alt="add task">Back to Home</a>
+{% endblock %}
