@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import TodoItem
 from .forms import TodoForm
-from django.contrib import messages
 
 def todo_list(request):
     todos = TodoItem.objects.all()
@@ -13,7 +12,6 @@ def add_task(request):
 
         if form.is_valid():
             form.save()
-            messages.success(request, 'Task added')
             return redirect('todo_list')
     else:
         form = TodoForm()
@@ -32,7 +30,6 @@ def edit_task(request, pk):
 
         if form.is_valid():
             form.save()
-            messages.success(request, 'Task updated')            
             return redirect('task_detail', pk=task.pk)
     else:
         form = TodoForm(instance=task)
@@ -44,7 +41,6 @@ def delete_task(request, pk):
 
     if request.method == 'POST':
         task.delete()
-        messages.success(request, 'Task deleted')
         return redirect('todo_list')
     
     return render(request, 'delete-task.html', { 'task': task })
