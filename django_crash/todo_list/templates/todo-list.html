@@ -10,12 +10,12 @@
         </a>
     </div>
     <div class="todos">
-        {% for todo in todos %}
+        {% for task in todos %}
             <p class="todo-item">
-                <a href="{% url "task_detail" pk=todo.pk %}" alt="{{ todo.title }}">{{ todo.title }}</a>
+                <a href="{% url "task_detail" pk=task.pk %}" alt="{{ task.title }}">{{ task.title }}</a>
                 <span class="actions">
-                    <a href="#">Edit</a>
-                    <a class="delete" href="{% url "delete_task" pk=todo.pk %}">Delete</a>
+                    <a href="{% url "edit_task" pk=task.pk %}">Edit</a>
+                    <a href="{% url "delete_task" pk=task.pk %}">Delete</a>
                 </span>
             </p>
         {% endfor %}

@@ -13,6 +13,7 @@ def add_task(request):
 
         if form.is_valid():
             form.save()
+            messages.success(request, 'Task added')
             return redirect('todo_list')
     else:
         form = TodoForm()
@@ -22,6 +23,21 @@ def add_task(request):
 def task_detail(request, pk):
     task = get_object_or_404(TodoItem, pk=pk)
     return render(request, 'task-detail.html', { 'task': task })
+
+def edit_task(request, pk):
+    task = get_object_or_404(TodoItem, pk=pk)
+    
+    if request.method == 'POST':
+        form = TodoForm(request.POST, instance=task)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Task updated')            
+            return redirect('task_detail', pk=task.pk)
+    else:
+        form = TodoForm(instance=task)
+
+    return render(request, 'edit-task.html', { 'form': form, 'task': task })
 
 def delete_task(request, pk):
     task = get_object_or_404(TodoItem, pk=pk)

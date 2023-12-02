@@ -12,18 +12,21 @@ a {
 }
 
 button {
-    background-color: #1f618d;
+    background-color: green;
+    margin-bottom: 1rem;
     padding: 0.7rem 1.3rem;
     font-size: 1rem;
     color: white;
     text-decoration: none;
     font-weight: 700;
+    border: 1px solid green;
     border-radius: 50px;
     cursor: pointer;
+    width: 100%;
 }
 
 button:hover {
-    background-color: #154360;
+    background-color: darkgreen;
 }
 
 .container {
@@ -92,6 +95,7 @@ form + a {
 
 .delete-form .actions .btn-danger {
     background-color: darkred;
+    width: fit-content;
 }
 
 .todo-item .actions a:nth-child(2) {

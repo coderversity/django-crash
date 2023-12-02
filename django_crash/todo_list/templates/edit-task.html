@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}Add Task{% endblock %}
+{% block title %}Edit {{ task.title }}{% endblock %}
 
 {% block content %}
-    <h1>Add Task</h1>
-    <form method="post" action="{% url "add_task" %}">
+    <h1>Edit "{{ task.title }}"</h1>
+    <form method="post" action="{% url "edit_task" pk=task.pk %}">
         {% csrf_token %}
         <div class="form-control">
             <label for="id_title">Title</label>
@@ -18,7 +18,7 @@
             <label for="id_completed">Task completed?</label>
             {{ form.completed }}
         </div>
-        <button class="btn-submit" type="submit">Add Task</button>
+        <button class="btn-submit" type="submit">Update Task</button>
     </form>
 
     <a href="{% url "todo_list" %}" alt="back to home">Back to Home</a>
