@@ -67,6 +67,12 @@ This ocmmand will create and update database tables based on the migration files
 
 ## Other Commands
 
+To create a new Django project:
+`django-admin startproject project_name`
+
+To create a new Django app (you can create multiple apps in a project):
+`python manage.py startapp app_name`
+
 To build or update database tables and fields for new or updated models (models.py):
 `python manage.py makemigrations` then run `python manage.py migrate`
 
@@ -75,7 +81,5 @@ To create a new super user (admin):
 
 To open Python  shell (similar to a REPL):
 `python manage.py shell`
-
-
 
 For a full list of commands, refer to the Django documentation at https://djangoproject.com.
